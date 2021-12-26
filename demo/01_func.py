@@ -9,16 +9,5 @@ from string import (ascii_lowercase as low,
 def gen_name(length=5):
     length = int(length)
     if length <= 0:
-        raise TypeError(f'length should be > 0')
-    # fast
-    # s = ''.join(choice(high) if i == 0 else choice(low) for i in range(length))
-
-    # concise
-    s = ''
-    for i in range(length):
-        if i == 0:
-            s += choice(high)
-        else:
-            s += choice(low)
-        
-    return s
+        raise TypeError('length should be > 0')
+    return ''.join(choice(high) if i == 0 else choice(low) for i in range(length))
